@@ -1,0 +1,85 @@
+.AppGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  min-height: 100vh
+}
+
+.AppGridElement {
+  min-height: 50vh;
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Brick {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.BrickText {
+  margin: 0 auto;
+  height: 100%;
+}
+
+.BrickText > div {
+  white-space: nowrap;
+}
+
+.BrickButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.FancyButton {
+  font-size: 2em;
+  border-radius: 10px;
+  border: 2px #aaa solid;
+  backgroud: #eee;
+  font-weight: bold;
+  padding: 10px;
+  position: relative;
+}
+
+@keyframes spin {
+  to {transform: rotate(360deg);}
+}
+
+.FancyButtonSpinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spin .6s linear infinite;
+}
+
+.FancyButtonSpinner.hidden {
+  display: none;
+}
+
+.FancyButtonText.hidden {
+  visibility: hidden;
+}
+
+.Button {
+  border: none;
+  background: none;
+  padding:5px;
+  text-align: center;
+  vertical-align: middle;
+}
